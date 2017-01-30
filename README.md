@@ -1,6 +1,13 @@
 # STK-INF4000 Homework Boilerplate Code and Tests
 
-Code to get students started with STK-INF4000 homework.
+Code to get students started with STK-INF4000 homework. The repository
+contains
+
+- Boilerplate code
+- Tests
+
+The idea is that you complete the code to make the tests pass, and
+thus completing your homework assignment (or parts of it).
 
 ## Week 3 Assignments
 
