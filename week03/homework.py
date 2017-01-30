@@ -1,6 +1,3 @@
-import urlparse
-from collections import Counter
-
 def domain_name(url):
     """Return the domain name of a URL.
 
