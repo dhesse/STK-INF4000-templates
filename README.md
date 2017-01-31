@@ -22,3 +22,11 @@ the directory [week03](week03) using the command
 
     python -m unittest tests.test_hw
 
+## Week 4 Assignments
+
+The assignments and tests for week 4 are located in the same
+[folder](week04) and the tests can be run by calling from the
+[week04 directory](week04)
+
+    python tests.py
+
