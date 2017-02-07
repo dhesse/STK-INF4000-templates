@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from io import StringIO
 
-from homework import read_file_or_buffer, add_squared_column, transform, MSE
+from homework import read_file_or_buffer, add_squared_column, transform, MSE, MSE_KNN
 
 class TestReadFileOrBuffer(unittest.TestCase):
     def test_known_values(self):
@@ -51,8 +51,8 @@ class TestMSE(unittest.TestCase):
         np.testing.assert_almost_equal(
             MSE(y, yp), np.mean((y-yp)**2))
 
-class TestKNN_MES(unittest.TestCase):
-    def use_training_for_test(self):
+class TestMSE_KNN(unittest.TestCase):
+    def test_with_training(self):
         x = [[i] for i in np.random.standard_normal(20)]
         y = np.random.standard_normal(20)
         self.assertAlmostEqual(0, MSE_KNN(x,y,x,y,1))
