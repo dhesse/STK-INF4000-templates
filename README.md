@@ -30,3 +30,7 @@ The assignments and tests for week 4 are located in the same
 
     python tests.py
 
+## Week 5 Assignments
+
+The templates are located in the folder [week4](week4) and the
+instructions to execute the tests are identical to last week's.
