@@ -32,5 +32,9 @@ The assignments and tests for week 4 are located in the same
 
 ## Week 5 Assignments
 
-The templates are located in the folder [week4](week4) and the
+There were no programming assignments for week 5.
+
+## Week 6 Assignments
+
+The templates are located in the folder [week06](week06) and the
 instructions to execute the tests are identical to last week's.
