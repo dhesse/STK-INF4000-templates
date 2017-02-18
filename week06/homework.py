@@ -11,11 +11,7 @@ def lin_reg_coefs(X, colname_x, colname_y, degree):
     >>> homework.lin_reg_coefs(data, 'x', 'y', 2)
     array([ 42.,   2.,   1.])
     '''
-    from scipy.optimize import curve_fit
-    def f(X, t0, *thetas):
-        return t0 + sum([theta*X[colname_x]**(i+1) for i, theta
-                         in enumerate(thetas)])
-    return curve_fit(f, X, X[colname_y], [0]*(degree + 1))[0]
+    pass
 
 def relevant_features(X, y):
     '''
@@ -50,17 +46,7 @@ def relevant_features(X, y):
     (0.0, False),
     (61.573901192150096, True)]
     '''
-    from scipy.optimize import curve_fit
-    import numpy as np
-    from scipy.stats import t
-    N, p = X.shape
-    def f(X, *thetas):
-        assert(len(thetas) == p)
-        return sum((thetas[i]*X[:,i] for i in range(p)))
-    beta, pcov = curve_fit(f, X, y, [0]*p)
-    sigmab = np.sqrt(pcov.diagonal())
-    p_vals = [2*t.sf(abs(c/dc), N - p - 1) for c, dc in zip(beta, sigmab)]
-    return [p < 0.05 for p in p_vals]
+    pass
 
 def return_unique(iterable):
     '''
