@@ -15,7 +15,7 @@ def lin_reg_coefs(X, colname_x, colname_y, degree):
 
 def relevant_features(X, y):
     '''
-    Given a (X * p) feature matrix X and a traget vector y, returns a list of
+    Given a (N * p) feature matrix X and a traget vector y, returns a list of
     booleans indicating which columns of X should receive a regression coefficient
     different from zero.    
    
