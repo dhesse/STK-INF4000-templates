@@ -1,3 +1,67 @@
+def lin_reg_coefs(X, colname_x, colname_y, degree):
+    '''
+    Given a pandas data frame X, and column names x and y, will fit
+    a polynomial of a given degree to X[x], X[y].
+
+    Example:
+
+    >>> x = range(10)
+    >>> y = [i**2 + 2*i + 42 for i in x]
+    >>> data = pd.DataFrame({'x': x, 'y': y})
+    >>> homework.lin_reg_coefs(data, 'x', 'y', 2)
+    array([ 42.,   2.,   1.])
+    '''
+    from scipy.optimize import curve_fit
+    def f(X, t0, *thetas):
+        return t0 + sum([theta*X[colname_x]**(i+1) for i, theta
+                         in enumerate(thetas)])
+    return curve_fit(f, X, X[colname_y], [0]*(degree + 1))[0]
+
+def relevant_features(X, y):
+    '''
+    Given a (X * p) feature matrix X and a traget vector y, returns a list of
+    booleans indicating which columns of X should receive a regression coefficient
+    different from zero.    
+   
+    Example:
+    >>> # note: this can go wrong sometimes!
+    >>> # Our confidence intervalse cover 99% of the cases...
+    >>> from sklearn.datasets import make_regression
+    >>> X,y, coef = make_regression(200, 20, 15, coef=True, noise=20)
+    >>> list(zip(coef, homework.relevant_features(X, y)))
+    [(0.0, False),
+    (23.494316236763936, True),
+    (21.331578893815628, True),
+    (74.303855112117361, True),
+    (0.0, False),
+    (48.853119042392947, True),
+    (6.7305423143776411, True),
+    (79.323657173596274, True),
+    (28.987193637283958, True),
+    (25.507666479434789, True),
+    (73.995697853045456, True),
+    (47.861532159016228, True),
+    (47.236919314310832, True),
+    (16.450140733678388, True),
+    (93.746262789889883, True),
+    (0.0, False),
+    (34.354181663053218, True),
+    (0.0, False),
+    (0.0, False),
+    (61.573901192150096, True)]
+    '''
+    from scipy.optimize import curve_fit
+    import numpy as np
+    from scipy.stats import t
+    N, p = X.shape
+    def f(X, *thetas):
+        assert(len(thetas) == p)
+        return sum((thetas[i]*X[:,i] for i in range(p)))
+    beta, pcov = curve_fit(f, X, y, [0]*p)
+    sigmab = np.sqrt(pcov.diagonal())
+    p_vals = [2*t.sf(abs(c/dc), N - p - 1) for c, dc in zip(beta, sigmab)]
+    return [p < 0.05 for p in p_vals]
+
 def return_unique(iterable):
     '''
     Return the unique elements from an iterable.
