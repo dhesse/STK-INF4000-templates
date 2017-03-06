@@ -33,15 +33,4 @@ def LDA(RDD):
     array([[ 1.0033927 ,  0.01500472],
        [ 0.01500472,  0.9900926 ]])
     '''
-    N = RDD.count()
-    Ns = RDD.map(lambda (_, g): (g, None)).countByKey()
-    pis = {i: Ns[i]/float(N) for i in Ns}
-    sums = RDD.map(lambda (x, g): (g, x)).reduceByKey(add).collect()
-    mus = {l: s/Ns[l] for l,s in sums}
-    Sigma = (RDD
-             .map(lambda (x, l): np.dot((x-mus[l]).reshape(-1,1),
-                                        (x-mus[l]).reshape(1,-1)))
-             .reduce(add))
-    Sigma /= float(N - len(Ns))
-    
-    return pis, Sigma, mus
+    pass
