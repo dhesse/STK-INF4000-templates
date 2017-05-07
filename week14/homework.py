@@ -1,6 +1,6 @@
 def bigrams_excluding(text, stopwords):
     """Extract bigrams from text, returning only those that don't
-    incude words occuring stopwords.
+    incude words occuring in stopwords.
 
     Example:
     >>> text = "after all is said and done".split()
@@ -12,7 +12,7 @@ def bigrams_excluding(text, stopwords):
 
 def most_common_bigrams_excluding(corpus, stopwords, n):
     """Given a corpus of text and a number of stopwords, return the n
-    mnost common bigrams not containing the given stopwords and their
+    most common bigrams not containing the given stopwords and their
     counts.
 
     Example:

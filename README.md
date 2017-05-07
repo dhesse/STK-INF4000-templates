@@ -9,6 +9,13 @@ contains
 The idea is that you complete the code to make the tests pass, and
 thus completing your homework assignment (or parts of it).
 
+## Week 14 Assignments
+
+We use `NLTK` and plain python. Hence you can
+run [this week's tests](week14) using plain python:
+
+	python tests.py
+
 ## Week 7 Assignments
 
 For week 7 we use [Apache Spark](https://spark.apache.org) for the
