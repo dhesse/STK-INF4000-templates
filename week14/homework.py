@@ -55,6 +55,6 @@ def make_bigram_classifier(pos_corpus, neg_corpus, base_classifier, n_bigrams):
     from sklearn.naive_bayes import GaussianNB
     model, bigrams = make_bigram_classifier(positive[:800],
                                             negative[:800],
-                                            GaussianNB(), 100)
+                                            BernoulliNB(), 100)
     """
     pass
