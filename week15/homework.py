@@ -12,13 +12,16 @@ input_data = pd.DataFrame({'x': range(20),
 
 @app.route("/data.json")
 def get_json_data():
-    return jsonify(input_data.to_dict())
+    """Returns the raw JSON data created from input_data."""
+    return None
 
 @app.route("/predict.json")
 def predict():
+    """Returns the prediction from a linear regression for some future
+    values stored in a variable called  future_vals."""
     model = LinearRegression().fit(input_data[['x']], input_data['y'])
     future_vals = [[20], [21], [22]]
-    return jsonify(list(model.predict(future_vals)))
+    return None
     
 
 if __name__ == "__main__":

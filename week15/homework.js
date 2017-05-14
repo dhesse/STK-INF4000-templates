@@ -2,25 +2,16 @@ window.onload = function() {
     // 1. Write a function to set the innerHTML of an object
     //    to a given value.
     var setInnerHTML = function(id, newValue) {
-	var elem = document.getElementById(id);
-	elem.innerHTML = newValue;
     }
     // 2. Write a reduce function for Javascript arrays, in analog ot Python's reduce.
     //    It should produce e.g.
     //      reduce([1, 2, 3], function(x, y) { return x + y; }, 0) === 1 + 2 + 3;
     var reduce = function(array, fn, nullvalue) {
-	var i, result = nullvalue;
-	for (i = 0; i < array.length; i += 1)
-	    result = fn(result, array[i])
-	return result;
     }
     // 2. Write a function to add a reduce method to the Array prototype. After calling
     //    the function, one should be able to get
     //       [1,2,3].my_reduce(function(x, y) { return x * y; }, 1) === 1 * 2 * 3;
     var addReducePrototype = function() {
-	Array.prototype.my_reduce = function(fn, nullval) {
-	    return reduce(this, fn, nullval);
-	};
     }
 
     var checks = [
