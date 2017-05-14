@@ -9,6 +9,20 @@ contains
 The idea is that you complete the code to make the tests pass, and
 thus completing your homework assignment (or parts of it).
 
+## Week 15 Assignments
+
+The homework assignments consist of two parts. The Javascript bit can
+be found in the [homework.js](week15/homework.js) file. The tests can
+be run by simply opening [page.html](week15/page.html) in a browser.
+
+The python part can be found as usual
+in [homework.py](week15/homework.py)
+and [tests.py](week15/tests.py). The tests can be run using the two
+commands
+
+	FLASK_APP=homework.py flask run --reload
+	python -m unittest tests
+
 ## Week 14 Assignments
 
 We use `NLTK` and plain python. Hence you can
