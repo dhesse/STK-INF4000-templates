@@ -8,7 +8,7 @@ window.onload = function() {
     //      reduce([1, 2, 3], function(x, y) { return x + y; }, 0) === 1 + 2 + 3;
     var reduce = function(array, fn, nullvalue) {
     }
-    // 2. Write a function to add a reduce method to the Array prototype. After calling
+    // 3. Write a function to add a reduce method to the Array prototype. After calling
     //    the function, one should be able to get
     //       [1,2,3].my_reduce(function(x, y) { return x * y; }, 1) === 1 * 2 * 3;
     var addReducePrototype = function() {
